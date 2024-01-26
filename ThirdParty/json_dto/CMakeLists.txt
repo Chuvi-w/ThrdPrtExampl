@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.19)
+add_library(JSON_DTO INTERFACE)
+target_include_directories(JSON_DTO INTERFACE ${CMAKE_CURRENT_SOURCE_DIR}/../)
+if(WIN32)
+	target_compile_definitions(JSON_DTO INTERFACE NOMINMAX)
+endif()
+target_link_libraries(JSON_DTO INTERFACE RapidJSON)
